@@ -1,0 +1,76 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks';
+import Space from '../../components/Space';
+
+<Meta title="Space" />
+
+# Space
+
+<blockquote>Space component.</blockquote>
+
+<Preview>
+  <Story name="Usage">
+    <Space padding={[20]}>With padding of 20px on all sides.</Space>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Space} />
+
+## Examples
+
+<br />
+
+### 1. With padding
+
+<Preview>
+  <div>
+    <Space padding={[20]}>With padding of 20px on all sides.</Space>
+    <Space padding={[20, '5rem']}>
+      With vertical padding of 20px and horizontal of 5rem.
+    </Space>
+    <Space padding={[20, '5px', '2em', 45]}>
+      With padding of 20px on top, 5px on the right, 2em on the bottom and 45px
+      on the left.
+    </Space>
+  </div>
+</Preview>
+
+<br />
+
+### 2. With margin
+
+<Preview>
+  <div>
+    <Space margin={[30]}>With margin of 30px on all sides.</Space>
+    <Space margin={[30, '5rem']}>
+      With vertical margin of 30px and horizontal of 5rem.
+    </Space>
+    <Space margin={[30, '8pt', '3em', 35]}>
+      With margin of 30px on top, 8pt on the right, 3em on the bottom and 35px
+      on the left.
+    </Space>
+  </div>
+</Preview>
+
+<br />
+
+### 3. With gutter
+
+<Preview>
+  <div>
+    <div>20px vertical and horizontal spacing</div>
+    <Space gutter={[20]} style={{display: 'flex'}}>
+      <div>#1</div>
+      <div>#2</div>
+      <div>#3</div>
+    </Space>
+    <div>3em vertical and 10px horizontal spacing</div>
+    <Space gutter={['3em', 10]} style={{display: 'flex'}}>
+      <div>#1</div>
+      <div>#2</div>
+      <div>#3</div>
+      <div>#4</div>
+    </Space>
+  </div>
+</Preview>

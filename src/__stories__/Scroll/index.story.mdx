@@ -1,0 +1,50 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks';
+import {
+  ScrollToTop,
+  ScrollToTopOnMount,
+  ScrollToFragment,
+} from '../../components/Scroll';
+
+<Meta title="Scroll" />
+
+# Scroll
+
+<blockquote>Scroll components.</blockquote>
+
+<Preview>
+  <Story name="Usage">
+    <ScrollToTop />
+  </Story>
+</Preview>
+
+## Examples
+
+<br />
+
+### 1. ScrollToTop
+
+Scrolls to top on each location (url pathname) change
+
+<Preview>
+  <ScrollToTop />
+</Preview>
+
+<br />
+
+### 2. ScrollToTopOnMount
+
+Scrolls to top on component mount
+
+<Preview>
+  <ScrollToTopOnMount />
+</Preview>
+
+<br />
+
+### 3. ScrollToFragment
+
+Scrolls to the current url fragment
+
+<Preview>
+  <ScrollToFragment />
+</Preview>

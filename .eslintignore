@@ -8,3 +8,4 @@ coverage/*
 *.d.ts
 *.docz
 serviceWorker.js
+rollup.*

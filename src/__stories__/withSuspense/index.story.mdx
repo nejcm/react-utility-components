@@ -1,0 +1,43 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks';
+import withSuspense from '../../components/withSuspense';
+
+<Meta title="withSuspense" />
+
+# With Suspense
+
+<blockquote>
+  High order component that is a wrapper for react Suspense.{' '}
+  <i>
+    Read more at:{' '}
+    <a
+      href="https://reactjs.org/docs/code-splitting.html#reactlazy"
+      target="_blank"
+      rel="nofollow noreferrer"
+    >
+      https://reactjs.org/docs/code-splitting.html#reactlazy
+    </a>
+  </i>
+</blockquote>
+
+<Story name="Usage">
+  <pre>
+    {`// Usage example
+    
+      import React, { lazy } from 'react';
+      import { Route, Switch } from 'react-router-dom';
+      import {withSuspense} from '@nejcm/react-utility-components';
+      //
+      const MyLazyComponent = lazy(() => import('./LazyComponent'));
+      const MyParentComponent = () => {
+        return (
+          <Switch>
+            <Route path="/path" exact component={withSuspense(MyLazyComponent, () => <div>Loading...</div>)} />
+          </Switch>
+        );
+      };`}
+  </pre>
+</Story>
+
+## Props
+
+<Props of={withSuspense} />

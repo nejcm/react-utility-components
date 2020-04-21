@@ -12,11 +12,19 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["react/jsx-indent", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
     }
   },
   "rules": {

@@ -1,0 +1,30 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks';
+import Size from '../../components/Size';
+
+<Meta title="Size" />
+
+# Size
+
+<blockquote>Size component.</blockquote>
+
+<Preview>
+  <Story name="Usage">
+    <Size width={50} height={50} style={{background: '#ccc'}}></Size>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Size} />
+
+## Examples
+
+<br />
+
+### 1. With other props
+
+<Preview>
+  <Size maxWidth={400} height={100} style={{background: '#ccc'}}>
+    Children
+  </Size>
+</Preview>

@@ -1,0 +1,46 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks';
+import Embed from '../../components/Embed';
+
+<Meta title="Embed" />
+
+# Embed
+
+<blockquote>Responsive embed component.</blockquote>
+
+<Preview>
+  <Story name="Usage">
+    <Embed>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+        frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </Embed>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Embed} />
+
+## Examples
+
+<br />
+
+### 1. With custom aspect ratio
+
+<Preview>
+  <Embed aspectX={4} aspectY={3}>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+      frameBorder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </Embed>
+</Preview>

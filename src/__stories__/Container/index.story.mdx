@@ -1,0 +1,40 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks';
+import Container from '../../components/Container';
+
+<Meta title="Container" />
+
+# Container
+
+<blockquote>Container component.</blockquote>
+
+<Preview>
+  <Story name="Usage">
+    <Container width={400}>Container</Container>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Container} />
+
+## Examples
+
+<br />
+
+### 1. With custom padding
+
+<Preview>
+  <Container width={400} padding={35} title="Custom padding">
+    Container with custom padding of 35px
+  </Container>
+</Preview>
+
+<br />
+
+### 1. Without centering
+
+<Preview>
+  <Container width={400} center={false}>
+    Container without centering
+  </Container>
+</Preview>

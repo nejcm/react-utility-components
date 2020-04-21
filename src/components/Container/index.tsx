@@ -1,31 +1,41 @@
-import {css} from '@emotion/core';
 import styled from '@emotion/styled';
-import {measure2Css} from '@nejcm/js-helpers';
+import {isDefined, measure2Css} from '@nejcm/js-helpers';
 import * as React from 'react';
 
 const ContainerElement = styled(({width, padding, center, ...rest}) => (
   <div {...rest} />
 ))`
   position: relative;
-  width: 100%;
-  ${({width, padding, center}) => css`
-    width: ${width ? measure2Css(width) : 'none'};
-    ${center && 'margin-right: auto; margin-left: auto;'}
-    ${padding &&
-    `padding-left: ${measure2Css(padding)}; padding-right: ${measure2Css(
-      padding,
-    )};`}
+  ${({width, padding, center}): string => `
+    ${isDefined(width) ? `width: ${measure2Css(width)};` : ''}
+    ${center ? 'margin-right: auto; margin-left: auto;' : ''}
+    ${
+      isDefined(padding)
+        ? `padding-left: ${measure2Css(padding)}; padding-right: ${measure2Css(
+            padding,
+          )};`
+        : ''
+    }
   `}
 `;
 
-export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  padding: boolean | string | number;
-  width: string | number;
-  center: boolean;
+export interface ContainerProps /*extends React.HTMLAttributes<HTMLDivElement>*/ {
+  /**
+   * Container horizontal padding. Accepts number in 'px' or measure in string (e.g. "1.5rem")
+   */
+  padding?: string | number;
+  /**
+   * Container width. Accepts number in 'px' or string (e.g. "1.5rem")
+   */
+  width?: string | number;
+  /**
+   * Center container in parent element
+   */
+  center?: boolean;
 }
 
-const Container: React.SFC<ContainerProps> = (props) => (
-  <ContainerElement {...props} />
+const Container: React.SFC<ContainerProps> = ({center = true, ...rest}) => (
+  <ContainerElement center={center} {...rest} />
 );
 
 export default Container;

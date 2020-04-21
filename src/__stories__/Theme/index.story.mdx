@@ -1,0 +1,24 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks';
+import {ThemeProvider, useTheme} from '../../components/Theme';
+
+<Meta title="Theme" />
+
+# Theme
+
+<blockquote>Theme provider with useTheme hook</blockquote>
+
+<Story name="Usage">
+  <pre>
+    {`// Usage example
+      import {ThemeProvider, useTheme} from '@nejcm/react-utility-components';
+      //
+      const MyComponent = () => {
+        const {dark, toggle} = useTheme();
+        return (
+          <ThemeProvider>
+            {({theme, toggle}) => (<div>Children</div>)}
+          </ThemeProvider>
+        );
+      };`}
+  </pre>
+</Story>

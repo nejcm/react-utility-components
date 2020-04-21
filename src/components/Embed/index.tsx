@@ -1,23 +1,23 @@
 import styled from '@emotion/styled';
-import {measure2Css} from '@nejcm/js-helpers';
 import * as React from 'react';
 
-export interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  height: string | number;
-}
+export const calculatePadding = (x: number, y: number): string =>
+  ((Math.round(y) / Math.round(x)) * 100).toFixed(2);
 
-const ResponsiveEmbed = styled(({height, ...rest}: Props) => <div {...rest} />)`
+const ResponsiveEmbed = styled(({aspectX, aspectY, ...rest}: EmbedProps) => (
+  <div {...rest} />
+))`
   position: relative;
   display: block;
   width: 100%;
   padding: 0;
   overflow: hidden;
-  ${({height}) => height && `height: ${measure2Css(height)};`}
 
   &:before {
     display: block;
     content: '';
-    padding-top: 56.25%;
+    padding-top: ${({aspectX, aspectY}): string =>
+      `${calculatePadding(aspectX, aspectY)}%`};
   }
 
   > iframe,
@@ -32,4 +32,19 @@ const ResponsiveEmbed = styled(({height, ...rest}: Props) => <div {...rest} />)`
   }
 `;
 
-export default ResponsiveEmbed;
+export interface EmbedProps {
+  /**
+   * Aspect ratio of x
+   */
+  aspectX: number;
+  /**
+   * Aspect ratio of y
+   */
+  aspectY: number;
+}
+
+const Embed: React.SFC<EmbedProps> = ({aspectX = 16, aspectY = 9, ...rest}) => (
+  <ResponsiveEmbed aspectX={aspectX} aspectY={aspectY} {...rest} />
+);
+
+export default Embed;

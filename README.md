@@ -1,16 +1,7 @@
-# React utility components
+# ⚠️⚠️⚠️ This library is still under development.
+# 🧰 React utility components
 <blockquote>Some utility components I use in my projects.</blockquote>
-<br />
 
-<a href="https://www.joypixels.com/profiles/emoji/toolbox">
-  <img
-    height="128"
-    width="128"
-    alt="patch"
-    src="https://d1j8pt39hxlh3d.cloudfront.net/emoji/emojione/5.5/png/unicode/128/1f9f0.png"
-  />
-</a>
-<br />
 <br />
 
 <!-- prettier-ignore-start -->
@@ -49,7 +40,6 @@
 - [LICENSE](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 
 ## Installation
 

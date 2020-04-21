@@ -1,21 +1,27 @@
 import React, {createContext, useContext, useState} from 'react';
 
+// TODO:
+//    allow custom values
+//    default value
+//    onChange callback to allow overriding localStorage
+
 export interface ThemeHookValues {
-  dark: number;
+  theme: number;
   toggle: Function;
 }
 
-const isBrowser = () => typeof window !== 'undefined';
+const isBrowser = (): boolean => typeof window !== 'undefined';
 const name = 'theme';
 const defaultContextData: ThemeHookValues = {
-  dark: 0,
+  theme: 0,
   toggle: () => {
     //
   },
 };
 
 const ThemeContext = createContext(defaultContextData);
-const useTheme = () => useContext(ThemeContext);
+const useTheme = (): ThemeHookValues =>
+  useContext<ThemeHookValues>(ThemeContext);
 
 const useEffectTheme = (): [
   number,
@@ -27,17 +33,17 @@ const useEffectTheme = (): [
 };
 
 const ThemeProvider: React.SFC = ({children}) => {
-  const [dark, setDark] = useEffectTheme();
-  const toggle = (value: boolean | number | undefined) => {
-    const isDark = value || !dark ? 1 : 0;
+  const [theme, setTheme] = useEffectTheme();
+  const toggle = (value: boolean | number | undefined): void => {
+    const is = value || !theme ? 1 : 0;
     if (isBrowser()) {
-      window.localStorage.setItem(name, isDark.toString());
+      window.localStorage.setItem(name, is.toString());
     }
-    setDark(isDark);
+    setTheme(is);
   };
 
   const value: ThemeHookValues = {
-    dark,
+    theme,
     toggle,
   };
 

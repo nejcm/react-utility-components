@@ -1,18 +1,23 @@
-import {css} from '@emotion/core';
 import styled from '@emotion/styled';
-import {measure2Css} from '@nejcm/js-helpers';
+import {isDefined, measure2Css} from '@nejcm/js-helpers';
 import * as React from 'react';
 
-export interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  width: string | number;
-  height: string | number;
-  minWidth: string | number;
-  maxWidth: string | number;
-  minHeight: string | number;
-  maxHeight: string | number;
+export interface SizeProps {
+  /**
+   * Width. Accepts number in 'px' or measure in string (e.g. "1.5rem")
+   */
+  width?: string | number;
+  /**
+   * Height. Accepts number in 'px' or measure in string (e.g. "1.5rem")
+   */
+  height?: string | number;
+  minWidth?: string | number;
+  maxWidth?: string | number;
+  minHeight?: string | number;
+  maxHeight?: string | number;
 }
 
-const Sizes = styled(
+const SpaceElement = styled(
   ({
     width,
     height,
@@ -21,16 +26,18 @@ const Sizes = styled(
     minHeight,
     maxHeight,
     ...rest
-  }: Props) => <div {...rest} />,
+  }: SizeProps) => <div {...rest} />,
 )`
-  ${({width, height, minWidth, maxWidth, minHeight, maxHeight}) => css`
-      ${width && `width: ${measure2Css(width)};`}
-      ${height && `height: ${measure2Css(height)};`}
-      ${minWidth && `min-width: ${measure2Css(minWidth)};`}
-      ${maxWidth && `max-width: ${measure2Css(maxWidth)};`}
-      ${minHeight && `min-height: ${measure2Css(minHeight)};`}
-      ${maxHeight && `max-height: ${measure2Css(maxHeight)};`}
+  ${({width, height, minWidth, maxWidth, minHeight, maxHeight}): string => `
+      ${isDefined(width) ? `width: ${measure2Css(width)};` : ''}
+      ${isDefined(height) ? `height: ${measure2Css(height)};` : ''}
+      ${isDefined(minWidth) ? `min-width: ${measure2Css(minWidth)};` : ''}
+      ${isDefined(maxWidth) ? `max-width: ${measure2Css(maxWidth)};` : ''}
+      ${isDefined(minHeight) ? `min-height: ${measure2Css(minHeight)};` : ''}
+      ${isDefined(maxHeight) ? `max-height: ${measure2Css(maxHeight)};` : ''}
     `}
 `;
 
-export default Sizes;
+const Size: React.SFC<SizeProps> = (props) => <SpaceElement {...props} />;
+
+export default Size;

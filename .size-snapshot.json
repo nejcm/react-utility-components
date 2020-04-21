@@ -1,0 +1,31 @@
+{
+  "dist\\@nejcm\\react-utility-components.cjs.js": {
+    "bundled": 8756,
+    "minified": 6183,
+    "gzipped": 1756
+  },
+  "dist\\@nejcm\\react-utility-components.esm.js": {
+    "bundled": 7938,
+    "minified": 5452,
+    "gzipped": 1633,
+    "treeshaked": {
+      "rollup": {
+        "code": 2628,
+        "import_statements": 341
+      },
+      "webpack": {
+        "code": 4191
+      }
+    }
+  },
+  "dist\\@nejcm\\react-utility-components.umd.js": {
+    "bundled": 74550,
+    "minified": 34683,
+    "gzipped": 13414
+  },
+  "dist\\@nejcm\\react-utility-components.umd.min.js": {
+    "bundled": 63829,
+    "minified": 28680,
+    "gzipped": 11063
+  }
+}
