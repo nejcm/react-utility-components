@@ -1,4 +1,4 @@
-# ⚠️⚠️⚠️ This library is still under development.
+# ⚠️ This library is still work in progress ⚠️.
 # 🧰 React utility components
 <blockquote>Some utility components I use in my projects.</blockquote>
 

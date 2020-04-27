@@ -6,7 +6,7 @@ export interface RepeatProps {
 }
 
 const Repeat: React.SFC<RepeatProps> = ({children, times}) => {
-  return <>{Array(times).map(() => children)}</>;
+  return <>{Array(times).fill(children)}</>;
 };
 
 export default Repeat;

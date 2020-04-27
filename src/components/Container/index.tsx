@@ -7,7 +7,7 @@ const ContainerElement = styled(({width, padding, center, ...rest}) => (
 ))`
   position: relative;
   ${({width, padding, center}): string => `
-    ${isDefined(width) ? `width: ${measure2Css(width)};` : ''}
+    ${isDefined(width) ? `max-width: ${measure2Css(width)};` : ''}
     ${center ? 'margin-right: auto; margin-left: auto;' : ''}
     ${
       isDefined(padding)

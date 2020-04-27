@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import * as React from 'react';
 
 export const calculatePadding = (x: number, y: number): string =>
-  ((Math.round(y) / Math.round(x)) * 100).toFixed(2);
+  `${((Math.round(y) / Math.round(x)) * 100).toFixed(2)}%`;
 
-const ResponsiveEmbed = styled(({aspectX, aspectY, ...rest}: EmbedProps) => (
+const ResponsiveEmbed = styled(({aspectX, aspectY, ...rest}) => (
   <div {...rest} />
 ))`
   position: relative;
@@ -17,7 +17,7 @@ const ResponsiveEmbed = styled(({aspectX, aspectY, ...rest}: EmbedProps) => (
     display: block;
     content: '';
     padding-top: ${({aspectX, aspectY}): string =>
-      `${calculatePadding(aspectX, aspectY)}%`};
+      calculatePadding(aspectX, aspectY)};
   }
 
   > iframe,
@@ -36,11 +36,11 @@ export interface EmbedProps {
   /**
    * Aspect ratio of x
    */
-  aspectX: number;
+  aspectX?: number;
   /**
    * Aspect ratio of y
    */
-  aspectY: number;
+  aspectY?: number;
 }
 
 const Embed: React.SFC<EmbedProps> = ({aspectX = 16, aspectY = 9, ...rest}) => (
