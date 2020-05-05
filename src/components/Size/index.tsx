@@ -25,8 +25,9 @@ const SpaceElement = styled(
     maxWidth,
     minHeight,
     maxHeight,
+    as: T = 'div',
     ...rest
-  }: SizeProps) => <div {...rest} />,
+  }) => <T {...rest} />,
 )`
   ${({width, height, minWidth, maxWidth, minHeight, maxHeight}): string => `
       ${isDefined(width) ? `width: ${measure2Css(width)};` : ''}

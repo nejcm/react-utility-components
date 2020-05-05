@@ -31,10 +31,20 @@ import Container from '../../components/Container';
 
 <br />
 
-### 1. Without centering
+### 2. Without centering
 
 <Preview>
   <Container width={400} center={false}>
     Container without centering
+  </Container>
+</Preview>
+
+<br />
+
+### 3. Custom element type
+
+<Preview>
+  <Container as="section" width={500}>
+    This html element is a &lt;section&gt;
   </Container>
 </Preview>

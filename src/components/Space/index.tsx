@@ -1,6 +1,25 @@
 import styled from '@emotion/styled';
 import * as React from 'react';
 
+const SpaceElement = styled(
+  ({padding, margin, gutter, childGutter, as: T = 'div', ...rest}) => (
+    <T {...rest} />
+  ),
+)`
+  ${({padding, margin, gutter, childGutter}): string => `
+      ${padding ? `padding: ${padding};` : ''}
+      ${margin ? `margin: ${margin};` : ''}
+      ${
+        gutter
+          ? `margin-left: -${gutter}; margin-right: -${gutter};
+        > * {
+          padding: ${childGutter};
+        }`
+          : ''
+      }
+      `}
+`;
+
 export interface SpaceProps {
   /**
    * Element padding. Accepts array of up to 4 numbers in 'px' or measures in string (e.g. "1.5rem"). Values correspond to 'padding: top right bottom left'.
@@ -15,23 +34,6 @@ export interface SpaceProps {
    */
   gutter?: Array<number | string>;
 }
-
-const SpaceElement = styled(
-  ({padding, margin, gutter, childGutter, ...rest}) => <div {...rest} />,
-)`
-  ${({padding, margin, gutter, childGutter}): string => `
-      ${padding ? `padding: ${padding};` : ''}
-      ${margin ? `margin: ${margin};` : ''}
-      ${
-        gutter
-          ? `margin-left: -${gutter}; margin-right: -${gutter};
-        > * {
-          padding: ${childGutter};
-        }`
-          : ''
-      }
-    `}
-`;
 
 export function convertValues(array: Array<number | string>): string {
   return array

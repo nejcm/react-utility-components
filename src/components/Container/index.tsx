@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import {isDefined, measure2Css} from '@nejcm/js-helpers';
 import * as React from 'react';
 
-const ContainerElement = styled(({width, padding, center, ...rest}) => (
-  <div {...rest} />
-))`
+export const ContainerElement = styled(
+  ({width, padding, center, as: T = 'div', ...rest}) => <T {...rest} />,
+)`
   position: relative;
   ${({width, padding, center}): string => `
     ${isDefined(width) ? `max-width: ${measure2Css(width)};` : ''}
