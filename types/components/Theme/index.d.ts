@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 export interface ThemeHookValues {
-  dark: number;
-  toggle: Function;
+  theme: number;
+  toggle: (value: boolean | number | undefined) => void;
 }
 declare const useTheme: () => ThemeHookValues;
 declare const ThemeProvider: React.SFC;
