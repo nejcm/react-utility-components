@@ -5,7 +5,8 @@
     "declarationDir": "types",
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": ["ES2017", "dom"],
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "sourceMap": true,
     "module": "ES6",
     "moduleResolution": "node",
     "noEmitOnError": true,
@@ -17,7 +18,7 @@
     "outDir": "dist",
     "rootDir": "src",
     "strict": true,
-    "target": "ES6"
+    "target": "es5"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

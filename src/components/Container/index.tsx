@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
 import {isDefined, measure2Css} from '@nejcm/js-helpers';
 import * as React from 'react';
+import styled from 'styled-components';
 
 export const ContainerElement = styled(
   ({width, padding, center, as: T = 'div', ...rest}) => <T {...rest} />,

@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import * as React from 'react';
+import styled from 'styled-components';
 
 export const calculatePadding = (x: number, y: number): string =>
   `${((Math.round(y) / Math.round(x)) * 100).toFixed(2)}%`;

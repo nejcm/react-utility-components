@@ -7,7 +7,7 @@ import React, {createContext, useContext, useState} from 'react';
 
 export interface ThemeHookValues {
   theme: number;
-  toggle: Function;
+  toggle: (value: boolean | number | undefined) => void;
 }
 
 const isBrowser = (): boolean => typeof window !== 'undefined';

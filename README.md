@@ -1,5 +1,5 @@
-# ⚠️ This library is still work in progress ⚠️.
 # 🧰 React utility components
+
 <blockquote>Some utility components I use in my projects.</blockquote>
 
 <br />
@@ -50,11 +50,8 @@ $ npm install --save @nejcm/react-utility-components
 ```
 
 ```jsx
-
-import { Space } from '@nejcm/react-utility-components';
-
+import {Space} from '@nejcm/react-utility-components';
 ```
-
 
 ## Docs & Examples
 
@@ -86,7 +83,6 @@ instead of filing an issue on GitHub.
 ## Authors
 
 - Nejc Muršič ( [GitHub][github], [LinkedIn][linkedin] )
-
 
 ## Contributors
 
