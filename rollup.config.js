@@ -17,7 +17,7 @@ config.plugins[babelPluginIndex] = babel({
   extensions: ['.js', '.jsx', '.ts', '.tsx'],
 });
 config.plugins[cjsPluginIndex] = commonjs({
-  include: 'node_modules/**',
+  include: /node_modules/,
   exclude: ['**/*.story.js'],
   namedExports: {},
 });

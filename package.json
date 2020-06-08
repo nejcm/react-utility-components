@@ -64,6 +64,7 @@
     "styled-components": ">=4"
   },
   "dependencies": {
+    "@babel/runtime": "^7.10.2",
     "@nejcm/js-helpers": "^4.0.0"
   },
   "devDependencies": {
@@ -72,7 +73,6 @@
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/plugin-transform-typescript": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
-    "@babel/runtime": "^7.10.2",
     "@rollup/plugin-typescript": "^4.1.2",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
