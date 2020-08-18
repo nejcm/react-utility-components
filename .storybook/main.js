@@ -2,15 +2,12 @@ const path = require('path');
 
 // Export a function. Accept the base config as the only param.
 module.exports = {
-  stories: ['../src/**/*.story.(js|jsx|ts|tsx|mdx)'],
+  stories: ['../src/**/*.story.@(js|jsx|ts|tsx|mdx)'],
   addons: [
-    '@storybook/preset-typescript',
     {
       name: '@storybook/addon-docs',
       options: {
         configureJSX: true,
-        //babelOptions: {},
-        //sourceLoaderOptions: null,
       },
     },
     '@storybook/addon-links/register',
