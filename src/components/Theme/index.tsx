@@ -32,7 +32,7 @@ const useEffectTheme = (): [
   return [state, setState];
 };
 
-const ThemeProvider: React.SFC = ({children}) => {
+const ThemeProvider: React.FC = ({children}) => {
   const [theme, setTheme] = useEffectTheme();
   const toggle = (value: boolean | number | undefined): void => {
     const is = value || !theme ? 1 : 0;

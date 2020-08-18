@@ -4,5 +4,5 @@ export interface ThemeHookValues {
   toggle: (value: boolean | number | undefined) => void;
 }
 declare const useTheme: () => ThemeHookValues;
-declare const ThemeProvider: React.SFC;
+declare const ThemeProvider: React.FC;
 export {ThemeProvider, useTheme};

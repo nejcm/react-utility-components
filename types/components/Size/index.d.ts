@@ -13,5 +13,5 @@ export interface SizeProps {
   minHeight?: string | number;
   maxHeight?: string | number;
 }
-declare const Size: React.SFC<SizeProps>;
+declare const Size: React.FC<SizeProps>;
 export default Size;

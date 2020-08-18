@@ -1,4 +1,4 @@
 /// <reference types="react" />
-export declare const ScrollToTop: React.SFC;
-export declare const ScrollToTopOnMount: React.SFC;
-export declare const ScrollToFragment: React.SFC;
+export declare const ScrollToTop: React.FC;
+export declare const ScrollToTopOnMount: React.FC;
+export declare const ScrollToFragment: React.FC;

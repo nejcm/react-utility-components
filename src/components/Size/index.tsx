@@ -39,6 +39,6 @@ const SpaceElement = styled(
     `}
 `;
 
-const Size: React.SFC<SizeProps> = (props) => <SpaceElement {...props} />;
+const Size: React.FC<SizeProps> = (props) => <SpaceElement {...props} />;
 
 export default Size;

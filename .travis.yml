@@ -2,10 +2,16 @@ language: node_js
 cache: npm
 notifications:
   email: false
+env:
+  - TEST=test
 node_js:
   - lts/*
   - node
 install: npm install
+script:
+  - npm run validate
+after_success:
+  - mv coverage/coverage-final.json coverage/coverage.json
 branches:
   only:
     - master
@@ -15,17 +21,6 @@ branches:
 
 jobs:
   include:
-    - stage: testing
-      #if: branch in (master, develop)
-      node_js: lts/*
-      env:
-        - TEST=test
-      script:
-        - npm run validate
-      after_success:
-        - mv coverage/coverage-final.json coverage/coverage.json
-        - codecov
-
     - stage: release
       # if: branch = master AND commit_message =~ /^[0-9]*\.[0-9]*\.[0-9]*$/
       if: branch = master

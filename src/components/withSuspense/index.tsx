@@ -17,7 +17,7 @@ export interface WithSuspenseProps {
 const withSuspense = <P extends WithSuspenseProps>(
   Component: React.LazyExoticComponent<React.ComponentType<unknown>>,
   LoaderComponent?: React.ReactElement,
-): React.SFC<P & WithSuspenseProps> => (
+): React.FC<P & WithSuspenseProps> => (
   props: WithSuspenseProps,
 ): React.ReactElement => (
   <React.Suspense fallback={LoaderComponent || null}>
@@ -32,7 +32,7 @@ const withSuspense = <Props extends object>(
   Component: React.ComponentType<Props>,
   LoaderComponent?: React.ReactNode,
 ): Function => {
-  const lazy: React.SFC<Props> = (props) => (
+  const lazy: React.FC<Props> = (props) => (
     <React.Suspense fallback={LoaderComponent || null}>
       <Component {...props} />
     </React.Suspense>

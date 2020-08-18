@@ -3,5 +3,5 @@ export interface RepeatProps {
   times: number;
   children: React.ReactNode;
 }
-declare const Repeat: React.SFC<RepeatProps>;
+declare const Repeat: React.FC<RepeatProps>;
 export default Repeat;

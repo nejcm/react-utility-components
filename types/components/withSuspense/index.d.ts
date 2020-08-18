@@ -27,5 +27,5 @@ declare const withSuspense: <P extends WithSuspenseProps>(
         | (new (props: any) => React.Component<any, any, any>)
       >
     | undefined,
-) => React.SFC<P & WithSuspenseProps>;
+) => React.FC<P & WithSuspenseProps>;
 export default withSuspense;

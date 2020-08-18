@@ -14,5 +14,5 @@ export interface SpaceProps {
   gutter?: Array<number | string>;
 }
 export declare function convertValues(array: Array<number | string>): string;
-declare const Space: React.SFC<SpaceProps>;
+declare const Space: React.FC<SpaceProps>;
 export default Space;

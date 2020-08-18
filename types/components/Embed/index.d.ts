@@ -10,5 +10,5 @@ export interface EmbedProps {
    */
   aspectY?: number;
 }
-declare const Embed: React.SFC<EmbedProps>;
+declare const Embed: React.FC<EmbedProps>;
 export default Embed;

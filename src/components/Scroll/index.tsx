@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 
-export const ScrollToTop: React.SFC = () => {
+export const ScrollToTop: React.FC = () => {
   const pathname = window.location.pathname;
 
   useEffect(() => {
@@ -10,7 +10,7 @@ export const ScrollToTop: React.SFC = () => {
   return null;
 };
 
-export const ScrollToTopOnMount: React.SFC = () => {
+export const ScrollToTopOnMount: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,7 +18,7 @@ export const ScrollToTopOnMount: React.SFC = () => {
   return null;
 };
 
-export const ScrollToFragment: React.SFC = () => {
+export const ScrollToFragment: React.FC = () => {
   const hash = window.location.hash;
 
   useEffect(() => {

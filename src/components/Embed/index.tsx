@@ -43,7 +43,7 @@ export interface EmbedProps {
   aspectY?: number;
 }
 
-const Embed: React.SFC<EmbedProps> = ({aspectX = 16, aspectY = 9, ...rest}) => (
+const Embed: React.FC<EmbedProps> = ({aspectX = 16, aspectY = 9, ...rest}) => (
   <ResponsiveEmbed aspectX={aspectX} aspectY={aspectY} {...rest} />
 );
 

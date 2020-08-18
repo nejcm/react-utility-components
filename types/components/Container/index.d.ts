@@ -19,5 +19,5 @@ export interface ContainerProps {
    */
   center?: boolean;
 }
-declare const Container: React.SFC<ContainerProps>;
+declare const Container: React.FC<ContainerProps>;
 export default Container;

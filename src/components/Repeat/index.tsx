@@ -5,7 +5,7 @@ export interface RepeatProps {
   children: React.ReactNode;
 }
 
-const Repeat: React.SFC<RepeatProps> = ({children, times}) => {
+const Repeat: React.FC<RepeatProps> = ({children, times}) => {
   return <>{Array(times).fill(children)}</>;
 };
 

@@ -43,7 +43,7 @@ export function convertValues(array: Array<number | string>): string {
     .join(` `);
 }
 
-const Space: React.SFC<SpaceProps> = ({padding, margin, gutter, ...rest}) => {
+const Space: React.FC<SpaceProps> = ({padding, margin, gutter, ...rest}) => {
   return (
     <SpaceElement
       padding={padding ? convertValues(padding.slice(0, 4)) : null}

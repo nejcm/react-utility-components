@@ -34,7 +34,7 @@ export interface ContainerProps /*extends React.HTMLAttributes<HTMLDivElement>*/
   center?: boolean;
 }
 
-const Container: React.SFC<ContainerProps> = ({center = true, ...rest}) => (
+const Container: React.FC<ContainerProps> = ({center = true, ...rest}) => (
   <ContainerElement center={center} {...rest} />
 );
 

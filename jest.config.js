@@ -27,7 +27,7 @@ module.exports = {
     },
   },
   moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx', 'scss'],
-  modulePaths: ['src'],
+  modulePaths: ['./src'],
   setupFilesAfterEnv: ['<rootDir>/config/testSetup.js'],
   testEnvironment: 'jest-environment-jsdom-fourteen',
   testURL: 'http://localhost',
@@ -38,7 +38,7 @@ module.exports = {
   testPathIgnorePatterns: [...ignores],
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
-    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
     '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
   },
