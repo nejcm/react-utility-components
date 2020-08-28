@@ -1,44 +1,28 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 
 export interface WithSuspenseProps {
   /**
    * Lazy loaded component.
    */
-  Component: React.LazyExoticComponent<React.ComponentType<unknown>>;
+  Component: React.LazyExoticComponent<React.ComponentType>;
   /**
-   * Loader component
-   * Example:
-   * () => (<div>Loading...</div>)
+   * Loader
+   * Example: <>Loading...</>
    * @default undefined
    */
-  LoaderComponent?: React.ReactElement;
+  Loader?: React.ReactElement | null;
 }
 
-const withSuspense = <P extends WithSuspenseProps>(
-  Component: React.LazyExoticComponent<React.ComponentType<unknown>>,
-  LoaderComponent?: React.ReactElement,
-): React.FC<P & WithSuspenseProps> => (
-  props: WithSuspenseProps,
+const withSuspense = (
+  Component: React.LazyExoticComponent<React.FC<any>>,
+  Loader: React.ReactElement | null = null,
+): React.FC<React.PropsWithRef<React.PropsWithChildren<any>>> => (
+  props,
 ): React.ReactElement => (
-  <React.Suspense fallback={LoaderComponent || null}>
-    <Component {...(props as P)} />
+  <React.Suspense fallback={Loader}>
+    <Component {...props} />
   </React.Suspense>
 );
 
 export default withSuspense;
-
-/*
-const withSuspense = <Props extends object>(
-  Component: React.ComponentType<Props>,
-  LoaderComponent?: React.ReactNode,
-): Function => {
-  const lazy: React.FC<Props> = (props) => (
-    <React.Suspense fallback={LoaderComponent || null}>
-      <Component {...props} />
-    </React.Suspense>
-  );
-  return lazy;
-};
-
-export default withSuspense;
-*/
