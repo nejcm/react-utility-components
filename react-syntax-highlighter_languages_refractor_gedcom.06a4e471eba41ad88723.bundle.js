@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[41],{751:function(module,exports,__webpack_require__){module.exports=__webpack_require__(2)("3YS0")}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_gedcom.06a4e471eba41ad88723.bundle.js.map
