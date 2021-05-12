@@ -135,7 +135,7 @@
     "kcd-scripts": "^6.2.4",
     "lint-staged": "^10.2.11",
     "node-sass": "^4.14.1",
-    "postcss": "^7.0.32",
+    "postcss": "^8.2.10",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
